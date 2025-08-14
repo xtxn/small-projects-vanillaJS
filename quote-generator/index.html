@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module"></script>
+    <title>quote-generator</title>
+</head>
+
+<body>
+    <section class="main-container">
+        <div class="loader"></div>
+        <div id="quote-container">
+            <div class="quote-text">
+                <i class="fas fa-quote-left"></i>
+                <span id="quote"></span>
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="quote-author">
+                <span id="author"></span>
+            </div>
+        </div>
+        <div id="btn-container">
+            <a class="twitter-share-button btn">
+                <i class="fab fa-twitter"></i></a>
+            <button id="generate-quote" class="btn">New Quote</button>
+        </div>
+    </section>
+</body>
+
+</html>
