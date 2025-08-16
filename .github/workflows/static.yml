@@ -31,6 +31,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Inject Unsplash API Key into JavaScript
+      # Make the secret available as an environment variable for this step
+      env:
+        UNSPLASH_API_KEY_SECRET: ${{ secrets.__UNSPLASH_API_KEY__}} 
+      run: |
+    
+        JS_FILE="infinity-scroll/script.js" 
+
+        if [ ! -f "$JS_FILE" ]; then
+          echo "Error: $JS_FILE not found. Please check the path."
+          exit 1
+        fi
+
+        echo "Injecting API Key into $JS_FILE..."
+        sed -i "s|__UNSPLASH_API_KEY__|$UNSPLASH_API_KEY_SECRET|g" "$JS_FILE"
+        echo "API Key injection complete."
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
