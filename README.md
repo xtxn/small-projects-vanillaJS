@@ -12,8 +12,10 @@ An empty div is placed at the end of the image list and is used as a trigger for
 ***Languages***: HTML5, CSS3, JavaScript (ES6+) <br>
 ***API***: Unsplash REST API
 
-[LIVE-DEMO](#)
+[LIVE-DEMO](https://xtxn.github.io/small-projects-vanillaJS/infinity-scroll/)
 
 >### 💾 Project 1
 # Basic Quote Generator
 ***Languages***: HTML5, CSS3, JavaScript (ES6+) <br>
+
+[LIVE-DEMO](https://xtxn.github.io/small-projects-vanillaJS/quote-generator/)
