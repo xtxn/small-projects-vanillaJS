@@ -9,11 +9,6 @@ const scrollTrigger = document.getElementById('scroll-trigger');
 let collection = [];
 let isLoading = false;
 
-
-// let requestedImg = 0;
-// let loadedImg = 0;
-// let ready = false;
-
 async function getImages() {
     if (isLoading) return;
 
@@ -79,11 +74,10 @@ function displayImages() {
 }
 
 function setAttribute(element, attributes) {
-    Object.entries(attributes).forEach(([KeyboardEvent, value]) => {
-        element.setAttribute(KeyboardEvent, value);
+    Object.entries(attributes).forEach(([key, value]) => {
+        element.setAttribute(key, value);
     });
 }
-
 
 const options = {
     root: null,
