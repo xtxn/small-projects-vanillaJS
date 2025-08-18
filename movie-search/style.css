@@ -16,7 +16,7 @@
     canvas,
     svg {
         display: block;
-        max-width: 100%;
+        width: 100%;
     }
 
     input,
@@ -38,31 +38,40 @@
 @layer colors {
     :root {
         --clr-logo: #fa5246;
-        --clr-text-primary-dark: #181818;
-        --clr-text-primary-light: #ececec;
+        --clr-text-primary-800: #181818;
+        --clr-text-primary-600: #5e5e5e;
+        --clr-text-primary-100: #ececec;
         --clr-main-background: #231E1E;
         --clr-secondary-background: #3A2524;
-        --clr-accent: #FC7B72;
-        --clr-unused: #3C3030;
+        --clr-accent: #a5554f;
+        --clr-accent-75: #fc7b72b1;
+        --clr-accent-1: #4d92c0;
+        --clr-accent-2: #202533;
     }
 }
+
 
 body {
     font-family: var(--font-default), sans-serif;
     font-size: 16px;
-    color: var(--clr-text-primary-light);
+    color: var(--clr-text-primary-800);
     background-color: var(--clr-main-background);
-    margin: 20px;
+    margin: 30px;
 }
 
+/* Title */
 h1 {
     font-family: var(--font-logo), sans-serif;
-    color: var(--clr-text-primary);
+    color: var(--clr-text-primary-100);
     font-size: 4rem;
     text-align: center;
     margin-bottom: 20px;
-    margin-right: -40px;
     letter-spacing: 40px;
+    margin-right: 40px;
+}
+
+h2 {
+    margin-bottom: 30px;
 }
 
 #h-red {
@@ -70,29 +79,39 @@ h1 {
 }
 
 .btn {
-    color: var(--clr-text-primary-dark);
-    font-weight: 700;
+    color: var(--clr-text-primary-100);
+    font-weight: 500;
     border: none;
     background: var(--clr-accent);
-    border-radius: 10px;
     cursor: pointer;
     text-transform: uppercase;
-    padding: 10px 30px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-/* Search input */
+/* Search section */
 #search-form {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.btn-search {
+    color: var(--clr-text-primary-800);
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
 #search-input {
+    color: var(--clr-text-primary-100);
+    background-color: var(--clr-secondary-background);
     border-radius: 10px;
+    flex-grow: 1;
     outline: none;
     border: none;
-    background-color: var(--clr-secondary-background);
-    flex-grow: 1;
+    padding: 15px;
+
 }
 
 /* Prevent the change in background color for autofill */
@@ -104,15 +123,101 @@ h1 {
     -webkit-text-fill-color: var(--clr-text-primary-light);
 }
 
+/* Display Search Results  */
+.search-title {
+    color: var(--clr-text-primary-100);
+}
+
+.result-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#search-results {
+    flex: 3;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+#favorites {
+    flex: 1;
+    background-color: var(--clr-accent);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    border-radius: 20px;
+}
+
+/* Movie cards */
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--clr-accent);
+    border-radius: 20px;
+}
+
+.movie-card::before {
+    content: attr(data-movie-type);
+    text-transform: uppercase;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 500;
+    background-color: var(--clr-accent-75);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card-title,
+.card-year {
+    margin: 10px 20px;
+}
+
+.card-year {}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    margin: 10px 20px 20px 20px;
+}
+
+.btn-details {
+    background-color: var(--clr-accent-2);
+    box-shadow: 4px 4px 10px 0px var(--clr-accent-1)
+}
+
+.btn-add {
+    background-color: var(--clr-accent-2);
+    color: var(--clr-accent);
+    box-shadow: 5px 5px 10px 0px var(--clr-accent-1)
+}
+
 /* Media Queries */
 @media screen and (max-width: 630px) {
+    body {
+        margin: 15px;
+    }
+
     h1 {
         font-size: 3rem;
         letter-spacing: 20px;
         margin-right: -20px;
     }
 
-    body {
-        font-size: 14px;
+    .movie-grid {
+        gap: 15px;
     }
+
+    #search-form {
+        gap: 15px;
+    }
+
+
 }
