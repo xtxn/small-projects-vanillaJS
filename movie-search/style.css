@@ -1,0 +1,118 @@
+@layer reset {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+        color: inherit;
+    }
+}
+
+@layer fonts {
+    :root {
+        --font-logo: 'Six Caps';
+        --font-default: 'Montserrat';
+    }
+}
+
+@layer colors {
+    :root {
+        --clr-logo: #fa5246;
+        --clr-text-primary-dark: #181818;
+        --clr-text-primary-light: #ececec;
+        --clr-main-background: #231E1E;
+        --clr-secondary-background: #3A2524;
+        --clr-accent: #FC7B72;
+        --clr-unused: #3C3030;
+    }
+}
+
+body {
+    font-family: var(--font-default), sans-serif;
+    font-size: 16px;
+    color: var(--clr-text-primary-light);
+    background-color: var(--clr-main-background);
+    margin: 20px;
+}
+
+h1 {
+    font-family: var(--font-logo), sans-serif;
+    color: var(--clr-text-primary);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: -40px;
+    letter-spacing: 40px;
+}
+
+#h-red {
+    color: var(--clr-logo);
+}
+
+.btn {
+    color: var(--clr-text-primary-dark);
+    font-weight: 700;
+    border: none;
+    background: var(--clr-accent);
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 30px;
+}
+
+/* Search input */
+#search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: var(--clr-secondary-background);
+    flex-grow: 1;
+}
+
+/* Prevent the change in background color for autofill */
+#search-input:-webkit-autofill,
+#search-input:-webkit-autofill:hover,
+#search-input:-webkit-autofill:focus,
+#search-input:-webkit-autofill:active {
+    box-shadow: 0 0 0px 50px var(--clr-secondary-background) inset;
+    -webkit-text-fill-color: var(--clr-text-primary-light);
+}
+
+/* Media Queries */
+@media screen and (max-width: 630px) {
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 20px;
+        margin-right: -20px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
