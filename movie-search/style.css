@@ -38,13 +38,15 @@
 @layer colors {
     :root {
         --clr-logo: #fa5246;
-        --clr-text-primary-800: #181818;
-        --clr-text-primary-600: #5e5e5e;
         --clr-text-primary-100: #ececec;
+        --clr-text-primary-200: #d6d6d6;
+        --clr-text-primary-300: #aeaeae;
+        --clr-text-primary-600: #5e5e5e;
+        --clr-text-primary-900: #181818;
         --clr-main-background: #231E1E;
         --clr-secondary-background: #3A2524;
         --clr-accent: #a5554f;
-        --clr-accent-75: #fc7b72b1;
+        --clr-accent-50: #fc7b727e;
         --clr-accent-1: #4d92c0;
         --clr-accent-2: #202533;
     }
@@ -53,8 +55,8 @@
 
 body {
     font-family: var(--font-default), sans-serif;
-    font-size: 16px;
-    color: var(--clr-text-primary-800);
+    font-size: 18px;
+    color: var(--clr-text-primary-100);
     background-color: var(--clr-main-background);
     margin: 30px;
 }
@@ -62,7 +64,6 @@ body {
 /* Title */
 h1 {
     font-family: var(--font-logo), sans-serif;
-    color: var(--clr-text-primary-100);
     font-size: 4rem;
     text-align: center;
     margin-bottom: 20px;
@@ -78,8 +79,11 @@ h2 {
     color: var(--clr-logo);
 }
 
+h3 {
+    font-size: 24px;
+}
+
 .btn {
-    color: var(--clr-text-primary-100);
     font-weight: 500;
     border: none;
     background: var(--clr-accent);
@@ -97,14 +101,12 @@ h2 {
 }
 
 .btn-search {
-    color: var(--clr-text-primary-800);
     font-weight: 700;
     padding: 10px 20px;
     border-radius: 10px;
 }
 
 #search-input {
-    color: var(--clr-text-primary-100);
     background-color: var(--clr-secondary-background);
     border-radius: 10px;
     flex-grow: 1;
@@ -124,9 +126,6 @@ h2 {
 }
 
 /* Display Search Results  */
-.search-title {
-    color: var(--clr-text-primary-100);
-}
 
 .result-wrapper {
     display: flex;
@@ -144,6 +143,10 @@ h2 {
     gap: 30px;
 }
 
+.movie-grid img {
+    max-height: 480px;
+}
+
 #favorites {
     flex: 1;
     background-color: var(--clr-accent);
@@ -156,6 +159,9 @@ h2 {
 
 /* Movie cards */
 .movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     overflow: hidden;
     background-color: var(--clr-accent);
@@ -163,13 +169,13 @@ h2 {
 }
 
 .movie-card::before {
-    content: attr(data-movie-type);
+    content: attr(data-type);
     text-transform: uppercase;
     position: absolute;
     right: 20px;
     top: 20px;
     font-weight: 500;
-    background-color: var(--clr-accent-75);
+    background-color: var(--clr-accent-50);
     padding: 5px;
     border-radius: 10px;
 }
