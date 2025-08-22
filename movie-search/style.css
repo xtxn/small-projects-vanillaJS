@@ -52,7 +52,6 @@
     }
 }
 
-
 body {
     font-family: var(--font-default), sans-serif;
     font-size: 18px;
@@ -113,7 +112,6 @@ h3 {
     outline: none;
     border: none;
     padding: 15px;
-
 }
 
 /* Prevent the change in background color for autofill */
@@ -122,7 +120,7 @@ h3 {
 #search-input:-webkit-autofill:focus,
 #search-input:-webkit-autofill:active {
     box-shadow: 0 0 0px 50px var(--clr-secondary-background) inset;
-    -webkit-text-fill-color: var(--clr-text-primary-light);
+    -webkit-text-fill-color: var(--clr-text-primary-100);
 }
 
 /* Display Search Results  */
@@ -143,18 +141,12 @@ h3 {
     gap: 30px;
 }
 
-.movie-grid img {
-    max-height: 480px;
-}
-
 #favorites {
     flex: 1;
     background-color: var(--clr-accent);
-    border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: fit-content;
     border-radius: 20px;
+    height: fit-content;
 }
 
 /* Movie cards */
@@ -166,6 +158,21 @@ h3 {
     overflow: hidden;
     background-color: var(--clr-accent);
     border-radius: 20px;
+    transition: transform 0.25s ease-in-out;
+}
+
+.card-title {
+    min-height: 3.5em;
+    line-height: 1.2;
+}
+
+.movie-card img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.03);
 }
 
 .movie-card::before {
@@ -185,8 +192,6 @@ h3 {
     margin: 10px 20px;
 }
 
-.card-year {}
-
 .btn-container {
     display: flex;
     gap: 20px;
@@ -194,15 +199,38 @@ h3 {
     margin: 10px 20px 20px 20px;
 }
 
-.btn-details {
+.btn-details,
+.fav-remove {
     background-color: var(--clr-accent-2);
-    box-shadow: 4px 4px 10px 0px var(--clr-accent-1)
+    box-shadow: 4px 4px 10px 0px var(--clr-accent-1);
 }
 
 .btn-add {
     background-color: var(--clr-accent-2);
     color: var(--clr-accent);
-    box-shadow: 5px 5px 10px 0px var(--clr-accent-1)
+    box-shadow: 5px 5px 10px 0px var(--clr-accent-1);
+}
+
+#favorites ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+#favorites li {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px var(--clr-secondary-background);
+}
+
+.fav-remove {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: 20px;
 }
 
 /* Media Queries */
@@ -224,6 +252,4 @@ h3 {
     #search-form {
         gap: 15px;
     }
-
-
 }
