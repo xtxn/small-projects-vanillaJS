@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Six+Caps&display=swap"
+        rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg" href="film-solid-full.svg">
+    <title>MOVIE NIGHT</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">MOVIE<span id="h-red">NIGHT</span></h1>
+    </header>
+
+    <main>
+        <!-- Movie Search -->
+        <section class="search-container">
+            <form id="search-form">
+                <input id="search-input" type="text" name="search" size="2"
+                    placeholder="Search for a movie (e.g., Alien) ..." required>
+                <button type="submit" class="btn-search btn">Search</button>
+            </form>
+        </section>
+
+        <!-- Populate movies cards here-->
+        <h2 class="search-title">Search Results:</h2>
+        <div class="result-wrapper">
+            <section id="search-results">
+                <div class="movie-grid">
+
+                </div>
+            </section>
+            <!-- TODO Favorite movies-->
+            <aside id="favorites">
+                <div class="favourites">
+                    <h2 class="fav-title">My Favorites</h2>
+                    <ul>
+                        <li class="fav-item">Miss Peregrine's Home for Peculiar Children
+                            <button class="fav-remove btn">Remove</button>
+                        </li>
+                        <li class="fav-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, iure!
+                            <button class="fav-remove btn">Remove</button>
+
+                        </li>
+                        <li class="fav-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
+                            voluptatem!
+                            <button class="fav-remove btn">Remove</button>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- TODO Modal for Movie Details -->
+
+    </main>
+    <script type="module" src="/src/app.js"></script>
+</body>
+
+</html>

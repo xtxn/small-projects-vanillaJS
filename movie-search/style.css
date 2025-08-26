@@ -1,0 +1,255 @@
+@layer reset {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        width: 100%;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+        color: inherit;
+    }
+}
+
+@layer fonts {
+    :root {
+        --font-logo: 'Six Caps';
+        --font-default: 'Montserrat';
+    }
+}
+
+@layer colors {
+    :root {
+        --clr-logo: #fa5246;
+        --clr-text-primary-100: #ececec;
+        --clr-text-primary-200: #d6d6d6;
+        --clr-text-primary-300: #aeaeae;
+        --clr-text-primary-600: #5e5e5e;
+        --clr-text-primary-900: #181818;
+        --clr-main-background: #231E1E;
+        --clr-secondary-background: #3A2524;
+        --clr-accent: #a5554f;
+        --clr-accent-50: #fc7b727e;
+        --clr-accent-1: #4d92c0;
+        --clr-accent-2: #202533;
+    }
+}
+
+body {
+    font-family: var(--font-default), sans-serif;
+    font-size: 18px;
+    color: var(--clr-text-primary-100);
+    background-color: var(--clr-main-background);
+    margin: 30px;
+}
+
+/* Title */
+h1 {
+    font-family: var(--font-logo), sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 40px;
+    margin-right: 40px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+#h-red {
+    color: var(--clr-logo);
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.btn {
+    font-weight: 500;
+    border: none;
+    background: var(--clr-accent);
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Search section */
+#search-form {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.btn-search {
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#search-input {
+    background-color: var(--clr-secondary-background);
+    border-radius: 10px;
+    flex-grow: 1;
+    outline: none;
+    border: none;
+    padding: 15px;
+}
+
+/* Prevent the change in background color for autofill */
+#search-input:-webkit-autofill,
+#search-input:-webkit-autofill:hover,
+#search-input:-webkit-autofill:focus,
+#search-input:-webkit-autofill:active {
+    box-shadow: 0 0 0px 50px var(--clr-secondary-background) inset;
+    -webkit-text-fill-color: var(--clr-text-primary-100);
+}
+
+/* Display Search Results  */
+
+.result-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#search-results {
+    flex: 3;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+#favorites {
+    flex: 1;
+    background-color: var(--clr-accent);
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+/* Movie cards */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--clr-accent);
+    border-radius: 20px;
+    transition: transform 0.25s ease-in-out;
+}
+
+.card-title {
+    min-height: 3.5em;
+    line-height: 1.2;
+}
+
+.movie-card img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.03);
+}
+
+.movie-card::before {
+    content: attr(data-type);
+    text-transform: uppercase;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 500;
+    background-color: var(--clr-accent-50);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card-title,
+.card-year {
+    margin: 10px 20px;
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    margin: 10px 20px 20px 20px;
+}
+
+.btn-details,
+.fav-remove {
+    background-color: var(--clr-accent-2);
+    box-shadow: 4px 4px 10px 0px var(--clr-accent-1);
+}
+
+.btn-add {
+    background-color: var(--clr-accent-2);
+    color: var(--clr-accent);
+    box-shadow: 5px 5px 10px 0px var(--clr-accent-1);
+}
+
+#favorites ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+#favorites li {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px var(--clr-secondary-background);
+}
+
+.fav-remove {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 630px) {
+    body {
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 20px;
+        margin-right: -20px;
+    }
+
+    .movie-grid {
+        gap: 15px;
+    }
+
+    #search-form {
+        gap: 15px;
+    }
+}
