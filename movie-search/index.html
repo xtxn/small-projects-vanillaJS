@@ -27,88 +27,17 @@
         <!-- Movie Search -->
         <section class="search-container">
             <form id="search-form">
-                <input id="search-input" type="text" size="2" placeholder="Search for a movie (e.g., Alien) ..."
-                    required>
+                <input id="search-input" type="text" name="search" size="2"
+                    placeholder="Search for a movie (e.g., Alien) ..." required>
                 <button type="submit" class="btn-search btn">Search</button>
             </form>
         </section>
 
-        <!-- TODO Found movies cards-->
+        <!-- Populate movies cards here-->
         <h2 class="search-title">Search Results:</h2>
         <div class="result-wrapper">
             <section id="search-results">
                 <div class="movie-grid">
-
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="movie-card" data-movie-type="movie">
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_SX300.jpg">
-                        <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
-                        <p class="card-year">2022</p>
-                        <div class="btn-container">
-                            <button class="btn-details btn">Details</button>
-                            <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
-                        </div>
-                    </div>
 
                 </div>
             </section>
@@ -117,11 +46,17 @@
                 <div class="favourites">
                     <h2 class="fav-title">My Favorites</h2>
                     <ul>
-                        <li class="fav-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, iste?
+                        <li class="fav-item">Miss Peregrine's Home for Peculiar Children
+                            <button class="fav-remove btn">Remove</button>
                         </li>
-                        <li class="fav-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, iure!</li>
+                        <li class="fav-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, iure!
+                            <button class="fav-remove btn">Remove</button>
+
+                        </li>
                         <li class="fav-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus,
-                            voluptatem!</li>
+                            voluptatem!
+                            <button class="fav-remove btn">Remove</button>
+                        </li>
                     </ul>
                 </div>
             </aside>
