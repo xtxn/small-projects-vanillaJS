@@ -31,12 +31,16 @@
                     placeholder="Search for a movie (e.g., Alien) ..." required>
                 <button type="submit" class="btn-search btn">Search</button>
             </form>
+            <!-- Error notification -->
+            <div id="error-box">
+                <span class="msg">error</span>
+            </div>
         </section>
 
-        <!-- Populate movies cards here-->
         <h2 class="search-title">Search Results:</h2>
         <div class="result-wrapper">
             <section id="search-results">
+                <!-- Populate movies cards here-->
                 <div class="movie-grid">
 
                 </div>
@@ -46,6 +50,7 @@
                 <div class="favourites">
                     <h2 class="fav-title">My Favorites</h2>
                     <ul>
+                        <!-- Placeholders -->
                         <li class="fav-item">Miss Peregrine's Home for Peculiar Children
                             <button class="fav-remove btn">Remove</button>
                         </li>
