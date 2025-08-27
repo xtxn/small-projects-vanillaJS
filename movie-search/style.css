@@ -67,7 +67,7 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     letter-spacing: 40px;
-    margin-right: 40px;
+    margin-left: 40px;
 }
 
 h2 {
@@ -79,7 +79,7 @@ h2 {
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .btn {
@@ -96,13 +96,17 @@ h3 {
 #search-form {
     display: flex;
     gap: 30px;
-    margin-bottom: 50px;
 }
 
 .btn-search {
     font-weight: 700;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 50px;
 }
 
 #search-input {
@@ -112,6 +116,18 @@ h3 {
     outline: none;
     border: none;
     padding: 15px;
+}
+
+/* Error message */
+#error-box {
+    position: absolute;
+    top: 5;
+    left: 50%;
+    margin-top: 15px;
+    translate: -50%;
+    color: var(--clr-logo);
+    font-weight: 600;
+    display: none;
 }
 
 /* Prevent the change in background color for autofill */
@@ -156,13 +172,15 @@ h3 {
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    max-height: 685px;
+    max-width: 340px;
     background-color: var(--clr-accent);
     border-radius: 20px;
     transition: transform 0.25s ease-in-out;
 }
 
 .card-title {
-    min-height: 3.5em;
+    min-height: 3em;
     line-height: 1.2;
 }
 
@@ -187,9 +205,12 @@ h3 {
     border-radius: 10px;
 }
 
-.card-title,
-.card-year {
+.card-title {
     margin: 10px 20px;
+}
+
+.card-year {
+    margin: 0 20px;
 }
 
 .btn-container {
@@ -200,15 +221,14 @@ h3 {
 }
 
 .btn-details,
-.fav-remove {
+.btn-add {
+    font-size: 16px;
     background-color: var(--clr-accent-2);
-    box-shadow: 4px 4px 10px 0px var(--clr-accent-1);
+    box-shadow: 5px 5px 10px 0px var(--clr-accent-1);
 }
 
 .btn-add {
-    background-color: var(--clr-accent-2);
     color: var(--clr-accent);
-    box-shadow: 5px 5px 10px 0px var(--clr-accent-1);
 }
 
 #favorites ul {
@@ -229,9 +249,12 @@ h3 {
 
 .fav-remove {
     font-size: 12px;
+    background-color: var(--clr-accent-2);
+    box-shadow: 4px 4px 10px 0px var(--clr-accent-1);
     padding: 5px 10px;
     margin-left: 20px;
 }
+
 
 /* Media Queries */
 @media screen and (max-width: 630px) {
@@ -242,7 +265,7 @@ h3 {
     h1 {
         font-size: 3rem;
         letter-spacing: 20px;
-        margin-right: -20px;
+        margin-left: 20px;
     }
 
     .movie-grid {
@@ -253,3 +276,5 @@ h3 {
         gap: 15px;
     }
 }
+
+/* TODO add hover on buttons */
