@@ -15,8 +15,7 @@ export async function searchMovies(title) {
         return movies.Search;
 
     } catch (error) {
-        // TODO handle error display
-        console.log(error.message);
+        throw error;
     };
 }
 
@@ -32,8 +31,7 @@ export async function movieDetails(imdbID) {
         }
         return movieData;
     } catch (error) {
-        // TODO handle error display
-        console.log(error.message);
+        throw error;
     };
 }
 
