@@ -35,6 +35,20 @@ export async function movieDetails(imdbID) {
     };
 }
 
+export async function getTrailerData(imdbID) {
+    const url = 'https://api.kinocheck.com/trailers?imdb_id='
+    try {
+        const response = await fetch(url + imdbID + '&language=en');
+        if (!response.ok) {
+            throw new Error('Can\'t connect to server')
+        }
+        const trailerData = await response.json();
+        return trailerData;
+    } catch (error) {
+        throw error;
+    }
+}
+
 
 
 
