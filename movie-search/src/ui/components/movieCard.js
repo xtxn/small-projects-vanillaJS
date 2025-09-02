@@ -1,11 +1,11 @@
 const fallbackImgSrc = '../../noposter1.png';
 
-export const createCard = (movie, onCardClick) => {
-
+export const createCard = (movie, onCardClick, isFavorite) => {
     const card = document.createElement('div');
     card.classList.add('movie-card');
     card.dataset.type = `${movie.Type}`;
-    card.dataset.imdb = `${movie.imdbID}`
+    card.dataset.imdbId = `${movie.imdbID}`;
+
     card.innerHTML =
         `<img src=${movie.Poster !== 'N/A' ? movie.Poster : fallbackImgSrc
         } onerror="this.onerror=null; this.src='${fallbackImgSrc}';" alt = "${movie.Title} Poster" >
@@ -13,12 +13,13 @@ export const createCard = (movie, onCardClick) => {
     <p class="card-year">${movie.Year}</p>
     <div class="btn-container">
         <button class="btn-details btn">Details</button>
-        <button class="btn-add btn"><i class="fa-solid fa-heart"></i></button>
+        <button class="btn-add btn">
+            <i class="fa-solid fa-heart ${isFavorite ? 'favorited' : ''}"></i>
+        </button>
     </div>
 </div > `;
 
-    card.querySelector(".btn-container").addEventListener("click", onCardClick);
-
+    card.addEventListener("click", onCardClick);
     return card;
 }
 
