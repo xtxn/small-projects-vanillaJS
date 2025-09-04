@@ -1,5 +1,11 @@
-# small-projects-vanillaJS
+[HOME](https://xtxn.github.io/small-projects-vanillaJS)
 
+
+>### 💾 Project X
+# Movie Search
+***Languages***: HTML5, CSS3, JavaScript (ES6+) <br>
+
+[LIVE-DEMO](https://xtxn.github.io/small-projects-vanillaJS/movie-search/)
 
 > ### 💾 Project 2
 # An infinite scroll image gallery using Unsplash API
