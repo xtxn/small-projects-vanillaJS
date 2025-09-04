@@ -31,8 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Inject Unsplash API Key into JavaScript
+        
       # Make UNSPLASH secret available as an environment variable for this step
+      - name: Inject Unsplash API Key into JavaScript
         env:
           UNSPLASH_API_KEY_SECRET: ${{ secrets.__UNSPLASH_API_KEY__}} 
         run: |
@@ -48,8 +49,9 @@ jobs:
           sed -i "s|__UNSPLASH_API_KEY__|$UNSPLASH_API_KEY_SECRET|g" "$JS_FILE"
           echo "API Key injection complete."
           
-      # Make IMDB secret available as an environment variable for this step
-          env:
+      # Make OMDB secret available as an environment variable for this step
+      - name: Inject OMDB API Key into JavaScript
+        env:
           OMDB_API_KEY_SECRET: ${{ secrets.__OMDB_API_KEY__}} 
         run: |
     
@@ -66,11 +68,13 @@ jobs:
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
