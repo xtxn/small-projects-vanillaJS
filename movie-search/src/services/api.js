@@ -1,7 +1,7 @@
 // import { API_KEY } from "../config.js"
 const API_KEY = '__OMDB_API_KEY__';
 
-const baseUrl = `http://www.omdbapi.com/?apikey=${API_KEY}`
+const baseUrl = `https://www.omdbapi.com/?apikey=${API_KEY}`
 
 export async function searchMovies(title) {
     try {
