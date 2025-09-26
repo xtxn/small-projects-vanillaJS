@@ -26,7 +26,6 @@ function renderFavorites() {
             const favElement = createFavItem(fav, () => {
                 favService.removeFavorites(fav.imdbID);
                 renderFavorites();
-                displayFavoritesOnLoad();
                 const cardInGrid = elements.movieGrid.querySelector(`[data-imdb-id="${fav.imdbID}"]`);
                 if (cardInGrid) {
                     cardInGrid.querySelector('.fa-heart').classList.remove('favorited');
@@ -109,19 +108,14 @@ export function onLoad() {
 function displayFavoritesOnLoad() {
     const favorites = favService.getAllFavorites();
 
-    // If there are no favorites, display a helpful message and stop.
     if (favorites.length === 0) {
         elements.movieGrid.innerHTML = '<p class="placeholder-text">Your favorite movies will appear here. <br>Start by searching for a movie!</p>';
         return;
     }
-
-    // IMPORTANT: Set the current movies state. This makes the click handlers
-    // for "Details" and "Add to Favorites" work correctly for these cards.
     currentSearchMovies = favorites;
 
-    elements.movieGrid.innerHTML = ''; // Clear any existing content
+    elements.movieGrid.innerHTML = '';
     favorites.forEach(movie => {
-        // When creating cards from the favorites list, the 'isFavorite' flag is always true.
         const cardElement = createCard(movie, onCardClick, true);
         elements.movieGrid.appendChild(cardElement);
     });
